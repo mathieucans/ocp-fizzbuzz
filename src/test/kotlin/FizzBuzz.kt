@@ -1,7 +1,12 @@
+
+val B = "b"
+
 class FizzBuzz(
-    val number: Int,
-    val sayerFactory: SayerFactory
+    var number: Int,
+    var sayerFactory: QuEstCeQueTuDis
 ) {
+    // say nothing
+    // return number of string 'nothing'
     fun say(): String {
         return sayerFactory.with(number).say()
     }
@@ -9,12 +14,12 @@ class FizzBuzz(
 }
 
 
-class SayerFactory {
+class QuEstCeQueTuDis {
     fun with(number: Int): Sayer {
         return listOf(
             SayerBang(),
-            SayerBoth(SayerFizz(), SayerBuzz()),
-            SayerBuzz(),
+            MoiJeDis(SayerFizz(), ZzufDisJe()),
+            ZzufDisJe(),
             SayerFizz(),
             SayerUniversal(number)
         ).first { it.shouldSay(number) }
@@ -23,7 +28,7 @@ class SayerFactory {
 
 class SayerBang : Sayer {
     override fun say(): String {
-        return "bang"
+        return "${B}ang"
     }
 
     override fun shouldSay(number: Int): Boolean {
@@ -32,7 +37,7 @@ class SayerBang : Sayer {
 
 }
 
-class SayerBoth(val sayerA: Sayer, val sayerB: Sayer) : Sayer {
+class MoiJeDis(val sayerA: Sayer, val sayerB: Sayer) : Sayer {
     override fun say(): String {
         return sayerA.say() + sayerB.say()
     }
@@ -41,13 +46,13 @@ class SayerBoth(val sayerA: Sayer, val sayerB: Sayer) : Sayer {
         return sayerA.shouldSay(number) && sayerB.shouldSay(number)
     }
 }
-class SayerBuzz : Sayer {
+class ZzufDisJe : Sayer {
     override fun shouldSay(number: Int): Boolean {
         return isMultipleOfFive(number)
     }
 
     override fun say(): String {
-        return "buzz"
+        return "${B}uzz"
     }
 
     private fun isMultipleOfFive(number: Int) = number % 5 == 0

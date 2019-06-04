@@ -28,8 +28,10 @@ class QuEstCeQueTuDis {
 
 class SayerBang : Sayer {
     override fun say(): String {
-        return "${B}ang"
+        return "${B}${CoNcAtEnAtEANG()}"
     }
+
+    private fun CoNcAtEnAtEANG() = "ang"
 
     override fun shouldSay(number: Int): Boolean {
         return number % 7 == 0

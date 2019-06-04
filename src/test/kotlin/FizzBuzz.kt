@@ -50,27 +50,27 @@ class MoiJeDis(val sayerA: Sayer, val sayerB: Sayer) : Sayer {
 }
 class ZzufDisJe : Sayer {
     override fun shouldSay(number: Int): Boolean {
-        return isMultipleOfFive(number)
+        return mult(5, number)
     }
 
     override fun say(): String {
         return "${B}uzz"
     }
 
-    private fun isMultipleOfFive(number: Int) = number % 5 == 0
 }
 
 class SayerFizz : Sayer {
     override fun shouldSay(number: Int): Boolean {
-        return isMultipleOfThree(number)
+        return mult(3, number)
     }
 
     override fun say(): String {
         return "fizz"
     }
 
-    private fun isMultipleOfThree(number: Int) = number % 3 == 0
 }
+
+private fun mult(a: Int, b: Int) = b % a == 0
 
 interface Sayer {
     fun say(): String
@@ -83,7 +83,7 @@ class SayerUniversal(val number: Int) : Sayer {
     }
 
     override fun say(): String {
-        if (number % 3 == 0) return "fizz"
+        if (mult(3, number)) return "fizz"
         return number.toString()
     }
 }

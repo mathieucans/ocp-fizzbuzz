@@ -11,20 +11,19 @@ class FizzBuzz(
     // return number of string 'nothing'
     fun say(): String {
         if (number == 7)
-            return SayerBang().say();
-        else if (number == 15)
-            return MoiJeDis(SayerFizz(), ZzufDisJe()).say();
-        else if (number == 5)
+            return "${B}${SayerBang().CoNcAtEnAtEANG()}";
+    else if (number == 15)
+        return MoiJeDis(SayerFizz(), ZzufDisJe()).say();
+    else if (number == 5)
             return  ZzufDisJe().say();
-        else if (number == 3)
-            return SayerFizz().say();
-        else if (number % 3 == 0) return FOO
-        else
+            else if (number == 3)
+                return SayerFizz().say();
+            else if (number % 3 == 0) return FOO
+    else
         return number.toString()
             var result: Sayer?
-            if (number == 7)
-                result = SayerBang()
-            else if (number == 15)
+
+            if (number == 15)
                 result = MoiJeDis(SayerFizz(), ZzufDisJe());
             else if (number == 5)
                 result = ZzufDisJe();
@@ -44,14 +43,11 @@ class QuEstCeQueTuDis {
 
 }
 
-class SayerBang : Sayer {
-    override fun say(): String {
-        return "${B}${CoNcAtEnAtEANG()}"
-    }
+class SayerBang {
 
-    private fun CoNcAtEnAtEANG() = "ang"
+    fun CoNcAtEnAtEANG() = "ang"
 
-    override fun shouldSay(number: Int): Boolean {
+    fun shouldSay(number: Int): Boolean {
         return number % 7 == 0
     }
 

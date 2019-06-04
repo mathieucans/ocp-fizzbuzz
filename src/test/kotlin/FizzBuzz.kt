@@ -19,24 +19,23 @@ class FizzBuzz(
         else if (number % 3 == 0) return "fizz"
         else
         return number.toString()
-        return with(number).say()
+            var result: Sayer?
+            if (number == 7)
+                result = SayerBang()
+            else if (number == 15)
+                result = MoiJeDis(SayerFizz(), ZzufDisJe());
+            else if (number == 5)
+                result = ZzufDisJe();
+            else if (number == 3)
+                result = SayerFizz();
+            else if (true)
+                result = SayerUniversal(number)
+            else result = MoiJeDis(SayerFizz(), ZzufDisJe())
+
+        return result.say()
     }
 
-    fun with(number: Int): Sayer {
-        if (number == 7)
-            return SayerBang();
-        else if (number == 15)
-            return MoiJeDis(SayerFizz(), ZzufDisJe());
-        else if (number == 5)
-            return  ZzufDisJe();
-        else if (number == 3)
-            return SayerFizz();
-        else if (true)
-            return SayerUniversal(number)
-        return MoiJeDis(SayerFizz(), ZzufDisJe());
     }
-
-}
 
 
 class QuEstCeQueTuDis {

@@ -12,8 +12,17 @@ class FizzBuzz(
     fun say(): String {
         if (number == 7)
             return "${B}${SayerBang().CoNcAtEnAtEANG()}";
-    else if (number == 15)
-        return MoiJeDis(SayerFizz(), ZzufDisJe()).say();
+    else if (number % 3 == 0){
+
+            if (number % 4 == 0)
+            {
+                return number.toString()
+            }
+            if (number % 5 == 0) {
+                return MoiJeDis(SayerFizz(), ZzufDisJe()).say();
+            }
+        }
+
     else if (number == 5)
             return  ZzufDisJe().say();
             else if (number == 3)

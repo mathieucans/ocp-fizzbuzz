@@ -8,13 +8,20 @@ class FizzBuzz(
     // say nothing
     // return number of string 'nothing'
     fun say(): String {
-        return sayerFactory.with(number).say()
+        if (number == 7)
+            return SayerBang().say();
+        else if (number == 15)
+            return MoiJeDis(SayerFizz(), ZzufDisJe()).say();
+        else if (number == 5)
+            return  ZzufDisJe().say();
+        else if (number == 3)
+            return SayerFizz().say();
+        else if (number % 3 == 0) return "fizz"
+        else
+        return number.toString()
+        return with(number).say()
     }
 
-}
-
-
-class QuEstCeQueTuDis {
     fun with(number: Int): Sayer {
         if (number == 7)
             return SayerBang();
@@ -28,6 +35,12 @@ class QuEstCeQueTuDis {
             return SayerUniversal(number)
         return MoiJeDis(SayerFizz(), ZzufDisJe());
     }
+
+}
+
+
+class QuEstCeQueTuDis {
+
 }
 
 class SayerBang : Sayer {

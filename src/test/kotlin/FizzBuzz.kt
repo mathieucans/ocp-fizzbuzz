@@ -1,6 +1,8 @@
 
 val B = "b"
 
+private val FOO = "fizz"
+
 class FizzBuzz(
     var number: Int,
     var sayerFactory: QuEstCeQueTuDis
@@ -16,7 +18,7 @@ class FizzBuzz(
             return  ZzufDisJe().say();
         else if (number == 3)
             return SayerFizz().say();
-        else if (number % 3 == 0) return "fizz"
+        else if (number % 3 == 0) return FOO
         else
         return number.toString()
             var result: Sayer?
@@ -64,13 +66,16 @@ class MoiJeDis(val sayerA: Sayer, val sayerB: Sayer) : Sayer {
         return sayerA.shouldSay(number) && sayerB.shouldSay(number)
     }
 }
+
+private val BAR = "${B}uzz"
+
 class ZzufDisJe : Sayer {
     override fun shouldSay(number: Int): Boolean {
         return number % 5 == 0
     }
 
     override fun say(): String {
-        return "${B}uzz"
+        return BAR
     }
 
 }
@@ -81,7 +86,7 @@ class SayerFizz : Sayer {
     }
 
     override fun say(): String {
-        return "fizz"
+        return FOO
     }
 
 }
@@ -99,7 +104,7 @@ class SayerUniversal(val number: Int) : Sayer {
     }
 
     override fun say(): String {
-        if (number % 3 == 0) return "fizz"
+        if (number % 3 == 0) return FOO
         return number.toString()
     }
 }

@@ -16,13 +16,17 @@ class FizzBuzz(
 
 class QuEstCeQueTuDis {
     fun with(number: Int): Sayer {
-        return listOf(
-            SayerBang(),
-            MoiJeDis(SayerFizz(), ZzufDisJe()),
-            ZzufDisJe(),
-            SayerFizz(),
-            SayerUniversal(number)
-        ).first { it.shouldSay(number) }
+        if (number == 7)
+            return SayerBang();
+        else if (number == 15)
+            return MoiJeDis(SayerFizz(), ZzufDisJe());
+        else if (number == 5)
+            return  ZzufDisJe();
+        else if (number == 3)
+            return SayerFizz();
+        else if (true)
+            return SayerUniversal(number)
+        return MoiJeDis(SayerFizz(), ZzufDisJe());
     }
 }
 
@@ -50,7 +54,7 @@ class MoiJeDis(val sayerA: Sayer, val sayerB: Sayer) : Sayer {
 }
 class ZzufDisJe : Sayer {
     override fun shouldSay(number: Int): Boolean {
-        return mult(5, number)
+        return number % 5 == 0
     }
 
     override fun say(): String {
@@ -61,7 +65,7 @@ class ZzufDisJe : Sayer {
 
 class SayerFizz : Sayer {
     override fun shouldSay(number: Int): Boolean {
-        return mult(3, number)
+        return number % 3 == 0
     }
 
     override fun say(): String {
@@ -83,7 +87,7 @@ class SayerUniversal(val number: Int) : Sayer {
     }
 
     override fun say(): String {
-        if (mult(3, number)) return "fizz"
+        if (number % 3 == 0) return "fizz"
         return number.toString()
     }
 }

@@ -81,6 +81,7 @@ class SayerUniversal(val number: Int) : Sayer {
     }
 
     override fun say(): String {
+        if (number % 3 == 0) return "fizz"
         return number.toString()
     }
 }
